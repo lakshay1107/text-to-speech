@@ -80,3 +80,26 @@ padding: 10px;
  }
 
 
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+    height: auto;
+    padding: 20px;
+  }
+
+  #result {
+    height: auto;
+    padding: 20px;
+  }
+
+  button {
+    height: 60px;
+    width: 60px;
+    font-size: 20px;
+  }
+
+  .button-container {
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+}
