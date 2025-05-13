@@ -1,7 +1,5 @@
 const resultElement = document.getElementById("result");
 let recognition;
-let prevFinal = '';
-let prevInterim = '';
 
 function startConverting() {
     if ('webkitSpeechRecognition' in window) {
@@ -14,18 +12,13 @@ function startConverting() {
 function setupRecognition(recognition) {
     recognition.continuous = true;
     recognition.interimResults = true;
-    recognition.lang = 'en-IN';
+    recognition.lang = 'en-US';
 
     recognition.onresult = function(event) {
         const { finalTranscript, interTranscript } = processResult(event.results);
-
-        // Only update DOM if transcript has changed
-        if (finalTranscript !== prevFinal || interTranscript !== prevInterim) {
-            resultElement.innerHTML = finalTranscript + interTranscript;
-            prevFinal = finalTranscript;
-            prevInterim = interTranscript;
-        }
+        resultElement.innerHTML = finalTranscript + interTranscript;
     };
+}
 
 function processResult(results) {
     let finalTranscript = '';
