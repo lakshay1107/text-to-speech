@@ -12,7 +12,7 @@ function startConverting() {
 function setupRecognition(recognition) {
     recognition.continuous = true;
     recognition.interimResults = true;
-    recognition.lang = 'en-US';
+    recognition.lang = 'en-IN';
 
     recognition.onresult = function(event) {
         const { finalTranscript, interTranscript } = processResult(event.results);
